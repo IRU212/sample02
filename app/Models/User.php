@@ -12,6 +12,9 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
+
+    protected $table = 'users';
+
     /**
      * The attributes that are mass assignable.
      *
@@ -21,6 +24,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'image'
     ];
 
     /**
@@ -41,4 +45,21 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    //投稿機能
+    public function ecs(){
+        return $this->hasMany(EC::class);
+    }
+    public function users(){
+        return $this->belongsTo(EC::class);
+    }
+    public function user(){
+        return $this->belongsTo(EC::class);
+    }
+
+    //いいね機能
+    public function nices(){
+        return $this->hasMany(Nice::class);
+    }
+
 }

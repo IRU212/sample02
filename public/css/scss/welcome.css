@@ -1,0 +1,168 @@
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  background-color: #f2f7f5;
+}
+
+body header {
+  width: 100vw;
+  height: 3.5rem;
+  line-height: 3.5rem;
+  border-bottom: 1px #ccc solid;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #bae8e8;
+  color: #fff;
+  font-size: 1.3rem;
+  padding-left: 5vw;
+}
+
+body header div {
+  width: 14vw;
+  text-align: center;
+}
+
+body header a {
+  color: #fff;
+  text-decoration: none;
+}
+
+body main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body main .profile {
+  width: 72vw;
+  height: 30vh;
+  margin-bottom: 1px #ccc solid;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #eee;
+  position: fixed;
+  top: 3.5rem;
+  border-bottom: solid 1px #ccc;
+}
+
+body main .profile .profile-left {
+  width: 50vh;
+  text-align: center;
+}
+
+body main .profile .profile-left .icon {
+  width: 100%;
+}
+
+body main .profile .profile-left .icon img {
+  height: 20vh;
+  width: 20vh;
+  margin: 5vh 0;
+  border-radius: 50%;
+  border: 3px #fff solid;
+  background-color: #fff;
+}
+
+body main .profile .profile-right {
+  width: 30vw;
+  height: 20vh;
+  margin: 5vh 0;
+}
+
+body main .user {
+  width: 10vw;
+  height: 97vh;
+  border-right: #ccc solid 1px;
+  position: fixed;
+  top: 3.5rem;
+  left: 0;
+  text-align: center;
+  background-color: #e3f6f5;
+}
+
+body main .user a {
+  text-decoration: none;
+}
+
+body main .user #user_name {
+  height: 7rem;
+  line-height: 7rem;
+  border-bottom: 1px #ccc solid;
+}
+
+body main .chat {
+  position: fixed;
+  left: 10vw;
+  top: 38vh;
+  width: 72vw;
+}
+
+body main .chat #chat_name {
+  margin: 0.3rem 0 0 0.6rem;
+}
+
+body main .chat #chat_message {
+  width: 100%;
+  height: 8vh;
+}
+
+body main .chat .private_chat {
+  width: 100%;
+}
+
+body main .chat .private_chat .private_chat_flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-bottom: 1px solid #ccc;
+}
+
+body main .chat .private_chat .private_chat_flex .chat_icon {
+  width: 7vw;
+  text-align: center;
+}
+
+body main .chat .private_chat .private_chat_flex .chat_icon img {
+  width: 6vh;
+  height: 6vh;
+  border-radius: 50%;
+  margin: 1vh 0 0 0;
+  background-color: #e3f6f5;
+  border: 1px solid #bbb;
+}
+
+body main .chat form {
+  position: fixed;
+  bottom: 0.6rem;
+  right: 22vw;
+}
+
+body main .chat form #message {
+  width: 60vw;
+  font-size: 1.2rem;
+}
+
+body main .chat form #submit {
+  position: fixed;
+  bottom: 0.6rem;
+  font-size: 1rem;
+  right: 20vw;
+}
+
+body main .search {
+  width: 18vw;
+  height: 97vh;
+  border-left: 1px #ccc solid;
+  position: fixed;
+  right: 0;
+  top: 3rem;
+  padding: 1rem 0 0 0;
+  text-align: center;
+}
+/*# sourceMappingURL=welcome.css.map */

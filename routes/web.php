@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\ECController;
+use App\Http\Controllers\NiceController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +15,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+Route::get('/',[ECController::class,'index']);
+Route::post('/create',[ECController::class,'create']);
+Route::get('/chat/{eC}',[ECController::class,'show'])->name('chat');
+
+//いいね機能
+Route::post('nice/{eC}',[NiceController::class,'nice'])->name('nice');
+Route::post('unnice/{eC}',[NiceController::class,'unnice'])->name('unnice');
+
+require __DIR__.'/auth.php';
