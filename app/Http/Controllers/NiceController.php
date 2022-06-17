@@ -9,9 +9,9 @@ use Illuminate\Support\Facades\Auth;
 
 class NiceController extends Controller
 {
-    public function nice(EC $eC){
+    public function nice(Request $request){
         $nice = new Nice();
-        $nice->ec_id = $eC->id;
+        $nice->ec_id = $request->ec_id;
         $nice->user_id = Auth::user()->id;
         $nice->save();
         return back();

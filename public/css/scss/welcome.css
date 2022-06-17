@@ -137,18 +137,18 @@ body main .chat .private_chat .private_chat_flex .chat_icon img {
   border: 1px solid #bbb;
 }
 
-body main .chat form {
+body main .chat .form_message {
   position: fixed;
   bottom: 0.6rem;
   right: 22vw;
 }
 
-body main .chat form #message {
+body main .chat .form_message #message {
   width: 60vw;
   font-size: 1.2rem;
 }
 
-body main .chat form #submit {
+body main .chat .form_message #submit {
   position: fixed;
   bottom: 0.6rem;
   font-size: 1rem;
@@ -161,8 +161,50 @@ body main .search {
   border-left: 1px #ccc solid;
   position: fixed;
   right: 0;
-  top: 3rem;
+  top: 3.5rem;
   padding: 1rem 0 0 0;
   text-align: center;
+}
+
+body main .search input {
+  font-size: 1.2rem;
+  width: 16vw;
+  border: #ccc solid 1px;
+  outline: none;
+}
+
+body main .search input :active {
+  border: #ccc solid 1px;
+}
+
+body main .search .submit_search {
+  display: none;
+}
+
+body main .search .result {
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  width: 16.2vw;
+  margin: 0 auto;
+}
+
+body main .search .result div {
+  width: 16vw;
+  border-bottom: 1px solid #ccc;
+  height: 6vh;
+  line-height: 6vh;
+}
+
+body main .search .result div a {
+  text-decoration: none;
+  color: #777;
+  font-size: 1.1rem;
+}
+
+body main .setting {
+  position: fixed;
+  top: 3.5rem;
+  left: 10vw;
+  width: 72vw;
 }
 /*# sourceMappingURL=welcome.css.map */

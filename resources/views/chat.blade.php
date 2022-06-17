@@ -3,12 +3,16 @@
 
         @foreach ($tests as $index => $item)
             <div id="chat_message">{{ $item['message']}}</div>
-            {{-- <div><button><a href="{{ route('nice',['eC' => $item['id']]) }}">いいね</a></button></div> --}}
+            <form action="{{ route('nice',$item['id']) }}" method="post">
+                @csrf
+                <input type="hidden" name="ec_id" value="{{ $item['id'] }}">
+                <input type="submit" value="いいね">
+            </form>
         @endforeach
 
     </div>
     <div>
-        <form action="/create" method="post">
+        <form action="/create" method="post" class="form_message">
             @csrf
             <input type="text" name="message" id="message">
             <input type="submit" value="＋" id="submit"> 

@@ -88,6 +88,9 @@ class ECController extends Controller
         
         $tests = User::with('ecs')->find($eC)->ecs;
 
+        //いいね機能
+        
+
         //検索機能
         $keyword = $request->input('keyword');
         $query = User::query();

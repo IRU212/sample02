@@ -129,7 +129,7 @@ body{
 
 
 
-                    form{
+                    .form_message{
                         position: fixed;
                         bottom: 0.6rem;
                         right: 22vw;
@@ -153,9 +153,51 @@ body{
                 border-left: 1px #ccc solid;
                 position: fixed;
                 right: 0;
-                top: 3rem;
+                top: 3.5rem;
                 padding: 1rem 0 0 0;
                 text-align: center;
+
+                    input{
+                        font-size: 1.2rem;
+                        width: 16vw;
+                        border: #ccc solid 1px;
+                        outline: none;
+
+                            :active{
+                                border: #ccc solid 1px;
+                            }
+                    }
+
+                    .submit_search{
+                        display: none;
+                    }
+
+                    .result{
+                        border-left: 1px solid #ccc;
+                        border-right: 1px solid #ccc;
+                        width: 16.2vw;
+                        margin: 0 auto;
+
+                            div{
+                                width: 16vw;
+                                border-bottom: 1px solid #ccc;
+                                height: 6vh;
+                                line-height: 6vh;
+
+                                a{
+                                    text-decoration: none;
+                                    color: #777;
+                                    font-size: 1.1rem;
+                                }
+                            }
+                    }
+            }
+
+            .setting{
+                position: fixed;
+                top: 3.5rem;
+                left: 10vw;
+                width: 72vw;
             }
 
         }

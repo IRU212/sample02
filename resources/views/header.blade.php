@@ -3,7 +3,7 @@
         @if (Route::has('login'))
             <div>
                 @auth
-                    <a href="{{ url('/dashboard') }}">{{ $user->name }}</a>
+                    <a href="{{ route('chat',['eC' => $user->id]) }}">{{ $user->name }}</a>
                 @else
                     <a href="{{ route('login') }}">Log in</a>
                     @if (Route::has('register'))
@@ -17,6 +17,6 @@
         <a href="{{ asset('/') }}">投稿一覧</a>
     </div>
     <div>
-        プロフィール
+        <a href="{{ asset('/setting') }}">設定</a>
     </div>
 </header>

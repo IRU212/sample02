@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ECController;
 use App\Http\Controllers\NiceController;
+use App\Http\Controllers\SettingController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,5 +27,10 @@ Route::get('/chat/{eC}',[ECController::class,'show'])->name('chat');
 //いいね機能
 Route::post('nice/{eC}',[NiceController::class,'nice'])->name('nice');
 Route::post('unnice/{eC}',[NiceController::class,'unnice'])->name('unnice');
+
+//設定
+Route::prefix('setting')->group(function(){
+    Route::get('/',[SettingController::class,'index']);
+});
 
 require __DIR__.'/auth.php';
