@@ -3,6 +3,12 @@
 
         @foreach ($tests as $index => $item)
             <div id="chat_message">{{ $item['message']}}</div>
+            <form action="{{ route('unnice',$item['id']) }}" method="post">
+                @csrf
+                @method('delete')
+                <input type="hidden" name="ec_id" value="{{ $item['id'] }}">
+                <input type="submit" value="いいね解除">
+            </form>
             <form action="{{ route('nice',$item['id']) }}" method="post">
                 @csrf
                 <input type="hidden" name="ec_id" value="{{ $item['id'] }}">

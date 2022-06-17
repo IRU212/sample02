@@ -26,7 +26,7 @@ Route::get('/chat/{eC}',[ECController::class,'show'])->name('chat');
 
 //いいね機能
 Route::post('nice/{eC}',[NiceController::class,'nice'])->name('nice');
-Route::post('unnice/{eC}',[NiceController::class,'unnice'])->name('unnice');
+Route::delete('unnice/{eC}',[NiceController::class,'unnice'])->name('unnice');
 
 //設定
 Route::prefix('setting')->group(function(){

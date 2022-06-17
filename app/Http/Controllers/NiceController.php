@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\EC;
 use App\Models\Nice;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -17,9 +18,9 @@ class NiceController extends Controller
         return back();
     }
 
-    public function unnice(EC $eC){
-        $user = Auth::user()->id;
-        $nice = Nice::where('ec_id',$eC->id)->where('user_id',$user)->first();
+    public function unnice($eC,Request $request){
+        $user=Auth::user()->id;
+        $nice=Nice::where('ec_id', $request->ec_id)->where('user_id', $user)->first();
         $nice->delete();
         return back();
     }
