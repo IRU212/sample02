@@ -6,6 +6,7 @@ use App\Models\EC;
 use App\Models\User;
 use App\Http\Requests\StoreECRequest;
 use App\Http\Requests\UpdateECRequest;
+use App\Models\Nice;
 use Illuminate\Http\Request;
 
 class ECController extends Controller
@@ -15,12 +16,15 @@ class ECController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index(Request $request,EC $eC)
     {
+
         $items = EC::all();
         $user = auth()->user();
 
         $acount = User::all();
+
+        $id = $user->id;
         
         $test = EC::with('users')->get();
         $samples = json_decode($test,true);
@@ -36,12 +40,18 @@ class ECController extends Controller
         }
         $results = $query->orderBy('id','asc')->paginate(5);
 
+        EC::find(1);
+
+        //いいね判定
+        $nice_judgement = Nice::where('user_id',$id)->get();
+
         $data = [
             'items' => $items,
             'user' => $user,
-            'acount' => $acount,
+            'acount' => $acount, 
             'tests' => $tests,
             'results' => $results,
+            'nice_judgement' => $nice_judgement
         ];
         return view('welcome',$data);
     }
@@ -89,7 +99,7 @@ class ECController extends Controller
         $tests = User::with('ecs')->find($eC)->ecs;
 
         //いいね機能
-        
+        $nice = Nice::where('ec_id', $request->ec_id);
 
         //検索機能
         $keyword = $request->input('keyword');
@@ -106,6 +116,7 @@ class ECController extends Controller
             'acounts' => $acounts,
             'tests' => $tests,
             'results' => $results,
+            'nice' => $nice
         ];
         return view('private',$data);
     }

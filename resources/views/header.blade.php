@@ -17,6 +17,6 @@
         <a href="{{ asset('/') }}">投稿一覧</a>
     </div>
     <div>
-        <a href="{{ asset('/setting') }}">設定</a>
+        <a href="{{ route('setting',['eC'=> auth()->id()]) }}">設定</a>
     </div>
 </header>

@@ -8,11 +8,12 @@ use Illuminate\Http\Request;
 
 class SettingController extends Controller
 {
-    public function index(Request $request){
+    public function index($eC,Request $request){
         $items = EC::all();
         $user = auth()->user();
 
-        $acount = User::all();
+        $acounts = User::all();
+        $acount = User::find($eC);
         
         $test = EC::with('users')->get();
         $samples = json_decode($test,true);
@@ -32,6 +33,7 @@ class SettingController extends Controller
             'items' => $items,
             'user' => $user,
             'acount' => $acount,
+            'acounts' => $acounts,
             'tests' => $tests,
             'results' => $results,
         ];

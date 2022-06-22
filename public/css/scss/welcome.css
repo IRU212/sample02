@@ -99,8 +99,15 @@ body main .user #user_name {
 body main .chat {
   position: fixed;
   left: 10vw;
-  top: 38vh;
+  top: 3.5rem;
   width: 72vw;
+}
+
+body main .chat .display_flex_chat {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-bottom: 1px solid #ccc;
 }
 
 body main .chat #chat_name {
@@ -114,6 +121,7 @@ body main .chat #chat_message {
 
 body main .chat .private_chat {
   width: 100%;
+  margin-top: 29.7vh;
 }
 
 body main .chat .private_chat .private_chat_flex {
@@ -206,5 +214,41 @@ body main .setting {
   top: 3.5rem;
   left: 10vw;
   width: 72vw;
+}
+
+body main .setting .myacount {
+  margin: 5vh 0vh 5vh 14vh;
+  font-size: 1.5rem;
+}
+
+body main .setting .profile-setting {
+  width: 84%;
+  margin: 0 auto;
+  background-color: #777;
+  border-radius: 4vh;
+  height: 60vh;
+}
+
+body main .setting .profile-setting img {
+  height: 17vh;
+  width: 17vh;
+  margin: 5vh 0% 3vh 10%;
+  border-radius: 50%;
+  border: 3px #fff solid;
+  background-color: #fff;
+}
+
+body main .setting .information-setting {
+  background-color: #aaa;
+  height: 22vh;
+  border-radius: 4vh 4vh 4vh 4vh;
+  width: 80%;
+  margin: auto;
+  padding: 3%;
+}
+
+body main .setting .logout {
+  margin-top: 8vh;
+  font-size: 1.2rem;
 }
 /*# sourceMappingURL=welcome.css.map */

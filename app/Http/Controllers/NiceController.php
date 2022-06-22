@@ -18,9 +18,10 @@ class NiceController extends Controller
         return back();
     }
 
-    public function unnice($eC,Request $request){
-        $user=Auth::user()->id;
-        $nice=Nice::where('ec_id', $request->ec_id)->where('user_id', $user)->first();
+    public function unnice(Request $request){
+        $nice = new Nice();
+        $user = Auth::user()->id;
+        $nice = Nice::where('ec_id', $request->ec_id)->where('user_id', $user)->first();
         $nice->delete();
         return back();
     }

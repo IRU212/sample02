@@ -5,7 +5,7 @@
         @include('header')
         <main>
             <div class="user">
-                @foreach ($acount as $item)
+                @foreach ($acounts as $item)
                     <div id="user_name">
                         <a href="{{ route('chat',['eC' => $item->id]) }}">{{ $item->name }}</a>
                     </div>

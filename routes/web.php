@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\ECController;
 use App\Http\Controllers\NiceController;
 use App\Http\Controllers\SettingController;
@@ -16,11 +17,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
-
-Route::get('/',[ECController::class,'index']);
+Route::get('/',[ECController::class,'index'])->middleware(['auth']);
 Route::post('/create',[ECController::class,'create']);
 Route::get('/chat/{eC}',[ECController::class,'show'])->name('chat');
 
@@ -30,7 +27,11 @@ Route::delete('unnice/{eC}',[NiceController::class,'unnice'])->name('unnice');
 
 //設定
 Route::prefix('setting')->group(function(){
-    Route::get('/',[SettingController::class,'index']);
+    Route::get('/{eC}',[SettingController::class,'index'])->name('setting');
 });
+
+//ログアウト
+Route::post('/logout',[AuthenticatedSessionController::class,'destroy']);
+Route::get('/logout',[AuthenticatedSessionController::class,'destroy']);
 
 require __DIR__.'/auth.php';

@@ -56,6 +56,10 @@ class User extends Authenticatable
     public function user(){
         return $this->belongsTo(EC::class);
     }
+    
+    public function ec(){
+        return $this->belongsTo(User::class);
+    }
 
     //いいね機能
     public function nices(){
