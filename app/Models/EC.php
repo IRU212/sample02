@@ -21,12 +21,9 @@ class EC extends Model
         public function users(){
             return $this->belongsTo(User::class);
         }
-        public function ecs(){
-            return $this->hasMany(User::class);
-        }
 
         public function user(){
-            return $this->hasOne(User::class);
+            return $this->belongsTo(User::class);
         }
 
         //いいね機能

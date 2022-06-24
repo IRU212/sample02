@@ -119,6 +119,27 @@ body main .chat #chat_message {
   height: 8vh;
 }
 
+body main .chat .chat_flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-bottom: 1px solid #ccc;
+}
+
+body main .chat .chat_flex .chat_icon {
+  width: 7vw;
+  text-align: center;
+}
+
+body main .chat .chat_flex .chat_icon img {
+  width: 6vh;
+  height: 6vh;
+  border-radius: 50%;
+  margin: 1vh 0 0 0;
+  background-color: #e3f6f5;
+  border: 1px solid #bbb;
+}
+
 body main .chat .private_chat {
   width: 100%;
   margin-top: 29.7vh;
@@ -223,15 +244,26 @@ body main .setting .myacount {
 
 body main .setting .profile-setting {
   width: 84%;
-  margin: 0 auto;
+  margin: 0 auto 0vh auto;
   background-color: #777;
   border-radius: 4vh;
-  height: 60vh;
+  height: 50vh;
+}
+
+body main .setting .profile-setting .display-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body main .setting .profile-setting .acount-font {
+  font-size: 1.1rem;
+  margin-top: 0.8rem;
 }
 
 body main .setting .profile-setting img {
-  height: 17vh;
-  width: 17vh;
+  height: 15vh;
+  width: 15vh;
   margin: 5vh 0% 3vh 10%;
   border-radius: 50%;
   border: 3px #fff solid;
@@ -240,7 +272,7 @@ body main .setting .profile-setting img {
 
 body main .setting .information-setting {
   background-color: #aaa;
-  height: 22vh;
+  height: 14vh;
   border-radius: 4vh 4vh 4vh 4vh;
   width: 80%;
   margin: auto;
@@ -248,7 +280,75 @@ body main .setting .information-setting {
 }
 
 body main .setting .logout {
-  margin-top: 8vh;
+  margin-top: 10vh;
+  margin-bottom: 3vh;
+  margin-left: 0.5vw;
   font-size: 1.2rem;
+}
+
+body main .setting .logout a {
+  text-decoration: none;
+  color: #000;
+}
+
+body main .setting .delete {
+  margin-top: 1vh;
+  margin-bottom: 4vh;
+}
+
+body main .setting .delete form {
+  width: 100%;
+}
+
+body main .setting .delete form input {
+  border: none;
+  background-color: #f2f7f5;
+  font-size: 1.2rem;
+}
+
+body .login {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url(https://static-cse.canva.com/blob/253154/free-stock-photos.jpg);
+}
+
+body .login .back-form {
+  background-color: rgba(255, 255, 255, 0.2);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+body .login .back-form form {
+  background-color: #f2f7f5;
+  width: 25vw;
+  height: 25vh;
+  margin: 0;
+  padding: 2vw 3vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+          transform: translateY(-50%) translateX(-50%);
+}
+
+body .login .back-form form .input-text-top {
+  font-size: 0.8rem;
+  margin-bottom: 0.4rem;
+}
+
+body .login .back-form form .input-text {
+  font-size: 1.1rem;
+  margin-bottom: 0.8rem;
+  padding: 0.2rem;
+  width: 24vw;
+  background-color: #fff;
 }
 /*# sourceMappingURL=welcome.css.map */

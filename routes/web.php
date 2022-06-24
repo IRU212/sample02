@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/',[ECController::class,'index'])->middleware(['auth']);
+Route::get('/',[ECController::class,'index'])->middleware(['auth'])->name('home');
 Route::post('/create',[ECController::class,'create']);
 Route::get('/chat/{eC}',[ECController::class,'show'])->name('chat');
 
@@ -28,10 +28,14 @@ Route::delete('unnice/{eC}',[NiceController::class,'unnice'])->name('unnice');
 //設定
 Route::prefix('setting')->group(function(){
     Route::get('/{eC}',[SettingController::class,'index'])->name('setting');
+    Route::delete('/{eC}/destroy',[SettingController::class,'destroy'])->name('setting-destroy');
 });
 
 //ログアウト
 Route::post('/logout',[AuthenticatedSessionController::class,'destroy']);
 Route::get('/logout',[AuthenticatedSessionController::class,'destroy']);
+
+//アカウント削除
+// Route::delete('/destroy/{eC}',[SettingController::class,'destroy'])->name('setting-destroy');
 
 require __DIR__.'/auth.php';

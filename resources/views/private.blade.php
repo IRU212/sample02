@@ -7,13 +7,7 @@
     <body>
         @include('header')
         <main>
-            <div class="user">
-                @foreach ($acounts as $item)
-                    <div id="user_name">
-                        <a href="{{ route('chat',['eC' => $item->id]) }}">{{ $item->name }}</a>
-                    </div>
-                @endforeach
-            </div>
+            @include('acount')
             @include('privateChat')
             @include('search')
         </main>

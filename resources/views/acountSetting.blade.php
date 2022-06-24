@@ -6,35 +6,27 @@
                 @if ($acount->image !=='')
                     <img src="{{ \Storage::url($acount->image) }}" width="25%">
                 @endif
-                {{-- @foreach ($acount as $item)
-                    <img src="{{ \Storage::url($item->image) }}" width="25%">
-                @endforeach --}}
             </div>
         </div>
         <div class="information-setting">
-            {{-- @foreach ($acount as $item)
-                <div>
-                    {{ $item->name }}
-                </div>
-                <div>
-                    投稿件数
-                </div>
-                <div>
-                    説明文
-                </div>
-            @endforeach --}}
-            <div>
+            <div class="acount-font">
                 {{ $acount->name }}
             </div>
-            <div>
-                投稿件数
-            </div>
-            <div>
-                説明文
+            <div class="acount-font">
+                {{ $acount->email }}
             </div>
         </div>
-        <div class="logout">
-            <a href="{{ asset('/logout') }}">ログアウト</a>
+        <div class="display-flex">
+            <div class="logout">
+                <a href="{{ asset('/logout') }}">ログアウト</a>
+            </div>
+        </div>
+        <div class="delete">
+            <form action="{{ route('setting-destroy',['eC' => $acount->id]) }}" method="post">
+                @csrf
+                @method('DELETE')
+                <input type="submit" value="アカウント削除">
+            </form>
         </div>
     </div>
 </div>

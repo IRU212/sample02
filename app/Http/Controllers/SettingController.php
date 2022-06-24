@@ -39,4 +39,10 @@ class SettingController extends Controller
         ];
         return view('setting',$data);
     }
+
+    public function destroy($eC){
+        EC::where('user_id',$eC)->delete();
+        User::where('id',$eC)->delete();
+        return  redirect()->route('home');
+    }
 }

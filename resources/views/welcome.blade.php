@@ -4,13 +4,7 @@
     <body>
         @include('header')
         <main>
-            <div class="user">
-                @foreach ($acount as $item)
-                    <div id="user_name">
-                        <a href="{{ route('chat',['eC' => $item->id]) }}">{{ $item->name }}</a>
-                    </div>
-                @endforeach
-            </div>
+            @include('acount')
             @include('chat')
             @include('search')
         </main>

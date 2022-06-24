@@ -21,11 +21,16 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
+        'id',
         'name',
         'email',
         'password',
-        'image'
+        'image',
+        'created_at',
+        'updated_at'
     ];
+
+    // protected $primaryKey = 'user_id';
 
     /**
      * The attributes that should be hidden for serialization.
@@ -50,15 +55,9 @@ class User extends Authenticatable
     public function ecs(){
         return $this->hasMany(EC::class);
     }
-    public function users(){
-        return $this->belongsTo(EC::class);
-    }
-    public function user(){
-        return $this->belongsTo(EC::class);
-    }
-    
+
     public function ec(){
-        return $this->belongsTo(User::class);
+        return $this->hasOne(EC::class);
     }
 
     //いいね機能

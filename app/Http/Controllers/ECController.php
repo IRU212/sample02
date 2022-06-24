@@ -8,6 +8,7 @@ use App\Http\Requests\StoreECRequest;
 use App\Http\Requests\UpdateECRequest;
 use App\Models\Nice;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ECController extends Controller
 {
@@ -19,18 +20,15 @@ class ECController extends Controller
     public function index(Request $request,EC $eC)
     {
 
-        $items = EC::all();
+        $items = User::all();
         $user = auth()->user();
 
-        $acount = User::all();
+        $acounts = User::all();
 
         $id = $user->id;
         
-        $test = EC::with('users')->get();
-        $samples = json_decode($test,true);
-
-        $sample = $samples;
-        $tests = $sample;
+        $test = EC::leftJoin('users','ecs.user_id','=','users.id')->get();
+        $tests = json_decode($test,true);
 
         //検索機能
         $keyword = $request->input('keyword');
@@ -40,15 +38,13 @@ class ECController extends Controller
         }
         $results = $query->orderBy('id','asc')->paginate(5);
 
-        EC::find(1);
-
         //いいね判定
         $nice_judgement = Nice::where('user_id',$id)->get();
 
         $data = [
             'items' => $items,
             'user' => $user,
-            'acount' => $acount, 
+            'acounts' => $acounts, 
             'tests' => $tests,
             'results' => $results,
             'nice_judgement' => $nice_judgement
