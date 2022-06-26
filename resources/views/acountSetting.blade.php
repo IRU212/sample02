@@ -16,6 +16,15 @@
                 {{ $acount->email }}
             </div>
         </div>
+        <div>
+            <form action="{{ route('setting-update',['eC' => $acount->id]) }}" method="post">
+                @csrf
+                @method('POST')
+                <input type="text" name="name">
+                <input type="text" name="email">
+                <input type="submit">
+            </form>
+        </div>
         <div class="display-flex">
             <div class="logout">
                 <a href="{{ asset('/logout') }}">ログアウト</a>

@@ -40,6 +40,16 @@ class SettingController extends Controller
         return view('setting',$data);
     }
 
+    public function update(Request $request,$eC){
+        $user = User::where('id',$eC);
+        $update = [
+            'name' => $request->name,
+            'email' => $request->email,
+        ];
+        $user->update($update);
+        return  redirect()->route('home');
+    }
+
     public function destroy($eC){
         EC::where('user_id',$eC)->delete();
         User::where('id',$eC)->delete();

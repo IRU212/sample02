@@ -28,6 +28,7 @@ Route::delete('unnice/{eC}',[NiceController::class,'unnice'])->name('unnice');
 //設定
 Route::prefix('setting')->group(function(){
     Route::get('/{eC}',[SettingController::class,'index'])->name('setting');
+    Route::post('/{eC}/update',[SettingController::class,'update'])->name('setting-update');
     Route::delete('/{eC}/destroy',[SettingController::class,'destroy'])->name('setting-destroy');
 });
 

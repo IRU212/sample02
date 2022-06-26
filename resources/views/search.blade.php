@@ -1,7 +1,7 @@
 <div class="search">
     <div>
         <form action="" method="get">
-            <div><input type="text" name="keyword" placeholder="アカウント名"></div>
+            <div><input type="text" name="keyword" placeholder="アカウント検索"></div>
             <div class="submit_search"><input type="submit" value="検索"></div>
         </form>
     </div>
