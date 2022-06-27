@@ -8,14 +8,11 @@
                 </div>
             </div>
             <div class="profile-right">
-                <div>
+                <div class="name">
                     {{ $acount->name }}
                 </div>
                 <div>
-                    投稿件数
-                </div>
-                <div>
-                    説明文
+                    投稿{{ $count }}件
                 </div>
             </div>
         </div>

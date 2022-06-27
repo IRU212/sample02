@@ -27,7 +27,7 @@ class ECController extends Controller
 
         $id = $user->id;
         
-        $test = EC::leftJoin('users','ecs.user_id','=','users.id')->get();
+        $test = EC::leftJoin('users','ecs.user_id','=','users.id')->orderBy('ecs.created_at', 'desc')->get();
         $tests = json_decode($test,true);
 
         //検索機能
@@ -92,7 +92,8 @@ class ECController extends Controller
         $acounts = User::all();
         $acount = User::find($eC);
         
-        $tests = User::with('ecs')->find($eC)->ecs;
+        $tests = User::with('ecs')->find($eC)->ecs->sortByDesc('id');
+        $count = User::with('ecs')->find($eC)->ecs->count();
 
         //いいね機能
         $nice = Nice::where('ec_id', $request->ec_id);
@@ -112,7 +113,8 @@ class ECController extends Controller
             'acounts' => $acounts,
             'tests' => $tests,
             'results' => $results,
-            'nice' => $nice
+            'nice' => $nice,
+            'count' =>  $count
         ];
         return view('private',$data);
     }
